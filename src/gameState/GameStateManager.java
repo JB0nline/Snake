@@ -14,11 +14,10 @@ public class GameStateManager {
 	Game game;
 	
 	public static final int MENUSTATE = 0;
-	public static final int OPTIONSSTATE = 1;
-	public static final int HIGHSCORESTATE = 2;
-	public static final int PAUSESTATE = 3;
-	public static final int GAMEOVERSTATE = 4;
-	public static final int PLAYINGSTATE = 5;
+	public static final int HIGHSCORESTATE = 1;
+	public static final int PAUSESTATE = 2;
+	public static final int GAMEOVERSTATE = 3;
+	public static final int PLAYINGSTATE = 4;
 	
 	//CONSTRUCTOR
 	public GameStateManager(Game game){
@@ -29,7 +28,6 @@ public class GameStateManager {
 		
 		currentState = MENUSTATE;
 		gameStates.add(new MenuState(this));
-	//	gameStates.add(new OptionsState(this));
 	//	gameStates.add(new HighScoreState(this));
 	//	gameStates.add(new PauseState(this));
 	//	gameStates.add(new GameOverState(this));

@@ -58,12 +58,9 @@ public class MenuState extends GameState {
 			gsm.SetState(GameStateManager.PLAYINGSTATE);
 			break;
 		case 2:
-			gsm.SetState(GameStateManager.OPTIONSSTATE);
-			break;
-		case 3:
 			gsm.SetState(GameStateManager.HIGHSCORESTATE);
 			break;
-		case 4:
+		case 3:
 			System.exit(0);
 			break;
 		default:
