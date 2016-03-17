@@ -79,32 +79,27 @@ public class MenuState extends GameState {
 		}
 
 		if (key == KeyEvent.VK_UP) {
+			currentChoice--;
+			if (currentChoice == -1) {
+				currentChoice = options.length - 1;
+			}
+		}
+
+		if (key == KeyEvent.VK_DOWN) {
 			currentChoice++;
 			if (currentChoice == options.length) {
 				currentChoice = 0;
 			}
 		}
-		
-		
-
 	}
 
-	@Override
 	public void keyReleased(int key) {
-		// TODO Auto-generated method stub
-
 	}
 
-	@Override
 	public void mousePressed(int button) {
-		// TODO Auto-generated method stub
-
 	}
 
-	@Override
 	public void mouseReleased(int button) {
-		// TODO Auto-generated method stub
-
 	}
 
 }
