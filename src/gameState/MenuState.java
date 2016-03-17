@@ -9,7 +9,7 @@ public class MenuState extends GameState {
 
 	// FIELDS
 
-	private String[] options = { "Start", "Options", "High Scores", "Quit" };
+	private String[] options = { "Start", "High Scores", "Quit" };
 	private int currentChoice = 0;
 
 	// CONSTRUCTOR
@@ -54,13 +54,14 @@ public class MenuState extends GameState {
 
 	private void select() {
 		switch (currentChoice) {
+		case 0:
+			gsm.setState(GameStateManager.PLAYINGSTATE);
+			break;
 		case 1:
-			gsm.SetState(GameStateManager.PLAYINGSTATE);
+			System.out.println("highscore");
+			gsm.setState(GameStateManager.HIGHSCORESTATE);	
 			break;
 		case 2:
-			gsm.SetState(GameStateManager.HIGHSCORESTATE);
-			break;
-		case 3:
 			System.exit(0);
 			break;
 		default:
@@ -91,12 +92,6 @@ public class MenuState extends GameState {
 	}
 
 	public void keyReleased(int key) {
-	}
-
-	public void mousePressed(int button) {
-	}
-
-	public void mouseReleased(int button) {
 	}
 
 }

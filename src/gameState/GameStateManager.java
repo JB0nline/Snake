@@ -28,14 +28,14 @@ public class GameStateManager {
 		
 		currentState = MENUSTATE;
 		gameStates.add(new MenuState(this));
-	//	gameStates.add(new HighScoreState(this));
+		gameStates.add(new HighScoreState(this));
 	//	gameStates.add(new PauseState(this));
 	//	gameStates.add(new GameOverState(this));
 	//	gameStates.add(new PlayingState(this));
 	}
 	
 	//FUNCTIONS
-	public void SetState(int state){
+	public void setState(int state){
 		previousState = currentState;
 		currentState = state;
 		gameStates.get(currentState).initialise();
