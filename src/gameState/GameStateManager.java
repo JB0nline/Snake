@@ -29,9 +29,9 @@ public class GameStateManager {
 		currentState = MENUSTATE;
 		gameStates.add(new MenuState(this));
 		gameStates.add(new HighScoreState(this));
-	//	gameStates.add(new PauseState(this));
-	//	gameStates.add(new GameOverState(this));
-	//	gameStates.add(new PlayingState(this));
+		gameStates.add(new PauseState(this));
+		gameStates.add(new GameOverState(this));
+		gameStates.add(new PlayingState(this));
 	}
 	
 	//FUNCTIONS
