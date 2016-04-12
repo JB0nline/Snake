@@ -2,7 +2,7 @@ package gameItems;
 
 public class BodySegment {
 	// FIELDS
-	int x, y, size;
+	private int x, y, size;
 
 	// Constructor
 	/**
@@ -19,6 +19,18 @@ public class BodySegment {
 		this.x = x;
 		this.y = y;
 		this.size = size;
+	}
+	
+	public int getX(){
+		return x;
+	}
+	
+	public int getY(){
+		return y;
+	}
+	
+	public int getSize(){
+		return size;
 	}
 	
 	
