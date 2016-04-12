@@ -14,11 +14,11 @@ public class Snake {
 	public Snake() {
 		segmentSize = 10;
 		segments = new ArrayList<BodySegment>();
-		segments.add(new BodySegment(10, 10, segmentSize));
-		segments.add(new BodySegment(10, 20, segmentSize));
-		segments.add(new BodySegment(10, 30, segmentSize));
-		segments.add(new BodySegment(10, 40, segmentSize));
 		segments.add(new BodySegment(10, 50, segmentSize));
+		segments.add(new BodySegment(10, 40, segmentSize));
+		segments.add(new BodySegment(10, 30, segmentSize));
+		segments.add(new BodySegment(10, 20, segmentSize));
+		segments.add(new BodySegment(10, 10, segmentSize));
 		
 		color = Color.BLUE;
 		
