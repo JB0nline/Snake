@@ -1,6 +1,7 @@
 package gameState;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
@@ -23,6 +24,7 @@ public class PlayingState extends GameState{
 		g.fillRect(0, 0, Game.WIDTH, Game.HEIGHT);
 		
 		g.setColor(Color.BLACK);
+		g.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		String s = "Playing State";
 		int length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
 		g.drawString(s, Game.WIDTH / 2 - length / 2, 50);
