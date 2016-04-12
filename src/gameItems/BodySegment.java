@@ -20,18 +20,16 @@ public class BodySegment {
 		this.y = y;
 		this.size = size;
 	}
-	
-	public int getX(){
+
+	public int getX() {
 		return x;
 	}
-	
-	public int getY(){
+
+	public int getY() {
 		return y;
 	}
-	
-	public int getSize(){
+
+	public int getSize() {
 		return size;
 	}
-	
-	
 }
