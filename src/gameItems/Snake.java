@@ -37,8 +37,12 @@ public class Snake {
 
 	public void draw(Graphics2D g) {
 		
+		BodySegment BSeg;
+		
 		for(int i = 0; i<segments.size();i++){
-			
+			BSeg = segments.get(i);
+			g.setColor(color);
+			g.fillRect(BSeg.getX(),BSeg.getY(),BSeg.getSize(),BSeg.getSize());
 		}
 	}
 }

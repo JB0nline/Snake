@@ -3,6 +3,7 @@ package gameState;
 import java.awt.Graphics2D;
 import java.util.ArrayList;
 
+import gameItems.Snake;
 import main.Game;
 
 public class GameStateManager {
@@ -19,6 +20,8 @@ public class GameStateManager {
 	public static final int GAMEOVERSTATE = 3;
 	public static final int PLAYINGSTATE = 4;
 	
+	public Snake snake;
+	
 	//CONSTRUCTOR
 	public GameStateManager(Game game){
 		
@@ -32,6 +35,8 @@ public class GameStateManager {
 		gameStates.add(new PauseState(this));
 		gameStates.add(new GameOverState(this));
 		gameStates.add(new PlayingState(this));
+		
+		snake = new Snake();
 	}
 	
 	//FUNCTIONS

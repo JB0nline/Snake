@@ -16,7 +16,9 @@ public class PlayingState extends GameState{
 
 	public void initialise() {}
 
-	public void update() {}
+	public void update() {
+		gsm.snake.update();
+	}
 
 	public void draw(Graphics2D g) {
 		// Draw Background
@@ -28,6 +30,8 @@ public class PlayingState extends GameState{
 		String s = "Playing State";
 		int length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
 		g.drawString(s, Game.WIDTH / 2 - length / 2, 50);
+		
+		gsm.snake.draw(g);
 	}
 
 	public void keyPressed(int key) {
