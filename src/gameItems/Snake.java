@@ -38,7 +38,16 @@ public class Snake {
 			moveTimer = System.nanoTime();
 			segments.remove(0);
 			BodySegment BSeg = segments.get(segments.size()-1);
-			segments.add(new BodySegment(BSeg.getX() + segmentSize, BSeg.getY(), segmentSize));
+			if(right){
+				segments.add(new BodySegment(BSeg.getX() + segmentSize, BSeg.getY(), segmentSize));
+			}else if(left){
+				segments.add(new BodySegment(BSeg.getX() - segmentSize, BSeg.getY(), segmentSize));
+			}else if(down){
+				segments.add(new BodySegment(BSeg.getX(), BSeg.getY() + segmentSize, segmentSize));
+			}else{
+				segments.add(new BodySegment(BSeg.getX(), BSeg.getY() - segmentSize, segmentSize));
+			}
+			
 			
 		}
 	}
