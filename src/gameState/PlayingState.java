@@ -38,6 +38,18 @@ public class PlayingState extends GameState{
 		if (key == KeyEvent.VK_ESCAPE) {
 			gsm.setState(GameStateManager.PAUSESTATE);
 		}
+		if(key == KeyEvent.VK_UP){
+			gsm.snake.upPressed();
+		}
+		if(key == KeyEvent.VK_DOWN){
+			gsm.snake.downPressed();
+		}
+		if(key == KeyEvent.VK_LEFT){
+			gsm.snake.leftPressed();
+		}
+		if(key == KeyEvent.VK_RIGHT){
+			gsm.snake.rightPressed();
+		}
 	}
 
 	public void keyReleased(int key) {}

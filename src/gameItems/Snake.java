@@ -54,4 +54,38 @@ public class Snake {
 					BSeg.getSize());
 		}
 	}
+	
+	public void leftPressed(){
+		if(!right){
+			resetDirection();
+			left = true;
+		}
+	}
+	
+	public void rightPressed(){
+		if(!left){
+			resetDirection();
+			right = true;
+		}
+	}
+	
+	public void upPressed(){
+		if(!down){
+			resetDirection();
+			up = true;
+		}
+	}
+	
+	public void downPressed(){
+		if(!up){
+			resetDirection();
+			down = true;
+		}
+	}
+	private void resetDirection(){
+		left = false;
+		up = false;
+		down = false;
+		right = false;
+	}
 }
