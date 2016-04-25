@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Snake {
 	// FIELDS
 	private ArrayList<BodySegment> segments;
-	private boolean left, right, up, down;
+	private boolean left, right, up, down, changed;
 	private int segmentSize;
 	private Color color;
 	private long moveTimer, speed;
@@ -36,6 +36,7 @@ public class Snake {
 		
 		if ((System.nanoTime() - moveTimer) / 1000000 > speed) {
 			moveTimer = System.nanoTime();
+			changed = false;
 			segments.remove(0);
 			BodySegment BSeg = segments.get(segments.size()-1);
 			if(right){
@@ -65,28 +66,32 @@ public class Snake {
 	}
 	
 	public void leftPressed(){
-		if(!right){
+		if(!right && !changed){
+			changed = true;
 			resetDirection();
 			left = true;
 		}
 	}
 	
 	public void rightPressed(){
-		if(!left){
+		if(!left && !changed){
+			changed = true;
 			resetDirection();
 			right = true;
 		}
 	}
 	
 	public void upPressed(){
-		if(!down){
+		if(!down && !changed){
+			changed = true;
 			resetDirection();
 			up = true;
 		}
 	}
 	
 	public void downPressed(){
-		if(!up){
+		if(!up && !changed){
+			changed = true;
 			resetDirection();
 			down = true;
 		}
