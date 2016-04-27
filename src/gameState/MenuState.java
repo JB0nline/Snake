@@ -5,10 +5,16 @@ import java.awt.event.KeyEvent;
 
 import main.Game;
 
+/**
+ * The main menu state. Allows the player to navigate between the game, the high
+ * scores and quitting.
+ * 
+ * @author Jordan Barraclough
+ *
+ */
 public class MenuState extends GameState {
 
 	// FIELDS
-
 	private String[] options = { "Start", "High Scores", "Quit" };
 	private int currentChoice = 0;
 
@@ -18,14 +24,13 @@ public class MenuState extends GameState {
 
 	}
 
+	// FUNCTIONS
 	public void initialise() {
-
+		// NOTHING TO INITIALISE
 	}
 
-	@Override
 	public void update() {
-		// TODO Auto-generated method stub
-
+		// NOTHING TO UPDATE
 	}
 
 	public void draw(Graphics2D g) {
@@ -52,6 +57,9 @@ public class MenuState extends GameState {
 		}
 	}
 
+	/**
+	 * Used to select what happens with each state.
+	 */
 	private void select() {
 		switch (currentChoice) {
 		case 0:
@@ -59,7 +67,7 @@ public class MenuState extends GameState {
 			break;
 		case 1:
 			System.out.println("highscore");
-			gsm.setState(GameStateManager.HIGHSCORESTATE);	
+			gsm.setState(GameStateManager.HIGHSCORESTATE);
 			break;
 		case 2:
 			System.exit(0);

@@ -7,6 +7,12 @@ import javax.swing.JPanel;
 
 import gameState.GameStateManager;
 
+/**
+ * The JFrame to run. Contains the game loop.
+ * 
+ * @author Jordan Barraclough
+ *
+ */
 public class Game extends JPanel implements Runnable, KeyListener {
 
 	private static final long serialVersionUID = 1L;
@@ -40,7 +46,7 @@ public class Game extends JPanel implements Runnable, KeyListener {
 		requestFocus();
 	}
 
-	// FIELDS
+	// FUNCTIONS
 	public void addNotify() {
 		super.addNotify();
 		if (thread == null) {

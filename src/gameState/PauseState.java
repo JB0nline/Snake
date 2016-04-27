@@ -5,20 +5,28 @@ import java.awt.event.KeyEvent;
 
 import main.Game;
 
-public class PauseState extends GameState{
-	
-	//CONSTRUCTOR
-	public PauseState(GameStateManager gsm){
+/**
+ * Pauses the game. (does not draw the background so that the player will still
+ * see the snake on their screen when the game is paused
+ * 
+ * @author JB0nline
+ *
+ */
+public class PauseState extends GameState {
+
+	// CONSTRUCTOR
+	public PauseState(GameStateManager gsm) {
 		this.gsm = gsm;
 	}
 
-	public void initialise() {	
+	// FUCTIONS
+	public void initialise() {
 	}
 
 	public void update() {
 	}
 
-	public void draw(Graphics2D g) {	
+	public void draw(Graphics2D g) {
 		g.setFont(new Font("Tahoma", Font.PLAIN, 25));
 		g.setColor(Color.GREEN);
 		String s = "Press Escape to resume play";
@@ -33,7 +41,7 @@ public class PauseState extends GameState{
 	}
 
 	public void keyReleased(int key) {
-		
+
 	}
-	
+
 }

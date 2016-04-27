@@ -1,5 +1,10 @@
 package gameState;
-
+/**
+ * Abstract method to extend the the game states from. 
+ * 
+ * @author Jordan Barraclough
+ *
+ */
 public abstract class GameState {
 
 	protected GameStateManager gsm;

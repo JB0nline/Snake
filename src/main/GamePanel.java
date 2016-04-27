@@ -2,6 +2,12 @@ package main;
 
 import javax.swing.JFrame;
 
+/**
+ * Contains the main method - runs the JFrame.
+ * 
+ * @author Jordan Barraclough
+ *
+ */
 public class GamePanel {
 	public static void main(String[] args){
 		JFrame window = new JFrame("Snake");
