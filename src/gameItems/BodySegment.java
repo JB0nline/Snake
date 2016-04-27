@@ -1,10 +1,16 @@
 package gameItems;
 
+/**
+ * Used to hold the information about each body segment.
+ * 
+ * @author Jordan Barraclough
+ *
+ */
 public class BodySegment {
 	// FIELDS
 	private int x, y, size;
 
-	// Constructor
+	// CONSTRUCTOR
 	/**
 	 * Sets the position of the body segment of the snake
 	 * 
@@ -20,7 +26,8 @@ public class BodySegment {
 		this.y = y;
 		this.size = size;
 	}
-	
+
+	// FUNCTIONS
 	/**
 	 * 
 	 * @return The x-position of the segment
@@ -28,7 +35,7 @@ public class BodySegment {
 	public int getX() {
 		return x;
 	}
-	
+
 	/**
 	 * 
 	 * @return The y-position of the segment
@@ -36,7 +43,7 @@ public class BodySegment {
 	public int getY() {
 		return y;
 	}
-	
+
 	/**
 	 * 
 	 * @return The size of the segment

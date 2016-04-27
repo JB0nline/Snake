@@ -3,6 +3,13 @@ package gameItems;
 import java.awt.*;
 import java.util.ArrayList;
 
+/**
+ * The main snake class. Deals with all information and actions regarding the
+ * snake.
+ * 
+ * @author Jordan Barraclough
+ *
+ */
 public class Snake {
 	// FIELDS
 	private ArrayList<BodySegment> segments;
@@ -21,9 +28,13 @@ public class Snake {
 		segments.add(new BodySegment(10, 40, segmentSize));
 		segments.add(new BodySegment(10, 50, segmentSize));
 
+		// Colour of the snake
 		color = Color.BLUE;
 
+		// Speed of the snake
 		speed = 500;
+
+		// Booleans to hold the direction of the snake.
 		left = false;
 		right = false;
 		up = false;
@@ -32,27 +43,37 @@ public class Snake {
 	}
 
 	// FUNCTIONS
+	/**
+	 * Updates the snake.
+	 */
 	public void update() {
-		
+
 		if ((System.nanoTime() - moveTimer) / 1000000 > speed) {
 			moveTimer = System.nanoTime();
+			// Changed is set to false so that the snake cannot change direction
+			// more than once per tick
 			changed = false;
 			segments.remove(0);
-			BodySegment BSeg = segments.get(segments.size()-1);
-			if(right){
+			BodySegment BSeg = segments.get(segments.size() - 1);
+			if (right) {
 				segments.add(new BodySegment(BSeg.getX() + segmentSize, BSeg.getY(), segmentSize));
-			}else if(left){
+			} else if (left) {
 				segments.add(new BodySegment(BSeg.getX() - segmentSize, BSeg.getY(), segmentSize));
-			}else if(down){
+			} else if (down) {
 				segments.add(new BodySegment(BSeg.getX(), BSeg.getY() + segmentSize, segmentSize));
-			}else{
+			} else {
 				segments.add(new BodySegment(BSeg.getX(), BSeg.getY() - segmentSize, segmentSize));
 			}
-			
-			
+
 		}
 	}
 
+	/**
+	 * Draws the snake.
+	 * 
+	 * @param g
+	 *            The graphic the snake will be drawn to.
+	 */
 	public void draw(Graphics2D g) {
 
 		BodySegment BSeg;
@@ -64,39 +85,55 @@ public class Snake {
 					BSeg.getSize());
 		}
 	}
-	
-	public void leftPressed(){
-		if(!right && !changed){
+
+	/**
+	 * Make the snake move left. Checks that right and changed are both false.
+	 */
+	public void leftPressed() {
+		if (!right && !changed) {
 			changed = true;
 			resetDirection();
 			left = true;
 		}
 	}
-	
-	public void rightPressed(){
-		if(!left && !changed){
+
+	/**
+	 * Make the snake move right. Checks that left and changed are both false.
+	 */
+	public void rightPressed() {
+		if (!left && !changed) {
 			changed = true;
 			resetDirection();
 			right = true;
 		}
 	}
-	
-	public void upPressed(){
-		if(!down && !changed){
+
+	/**
+	 * Make the snake move up. Checks that down and changed are both false.
+	 */
+	public void upPressed() {
+		if (!down && !changed) {
 			changed = true;
 			resetDirection();
 			up = true;
 		}
 	}
-	
-	public void downPressed(){
-		if(!up && !changed){
+
+	/**
+	 * Make the snake move down. Checks that up and changed are both false.
+	 */
+	public void downPressed() {
+		if (!up && !changed) {
 			changed = true;
 			resetDirection();
 			down = true;
 		}
 	}
-	private void resetDirection(){
+
+	/**
+	 * Sets all the direction booleans to false.
+	 */
+	private void resetDirection() {
 		left = false;
 		up = false;
 		down = false;
