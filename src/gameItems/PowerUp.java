@@ -3,13 +3,13 @@ package gameItems;
 import java.awt.*;
 
 public abstract class PowerUp {
-
-	private int size,x,y;
-	private Color color;
-	private String name;
+	
+	protected int x,y,size;
+	protected Color color;
+	protected String name;
 	
 	public void draw(Graphics2D g){
 		g.setColor(color);
-		g.fillOval(x,y,size,size);
+		g.fillOval(x+(size/2), y+(size/2), size, size);
 	}
 }

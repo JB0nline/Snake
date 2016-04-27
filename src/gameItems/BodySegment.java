@@ -20,15 +20,27 @@ public class BodySegment {
 		this.y = y;
 		this.size = size;
 	}
-
+	
+	/**
+	 * 
+	 * @return The x-position of the segment
+	 */
 	public int getX() {
 		return x;
 	}
-
+	
+	/**
+	 * 
+	 * @return The y-position of the segment
+	 */
 	public int getY() {
 		return y;
 	}
-
+	
+	/**
+	 * 
+	 * @return The size of the segment
+	 */
 	public int getSize() {
 		return size;
 	}
