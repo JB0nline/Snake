@@ -2,20 +2,22 @@ package gameItems;
 
 import java.awt.*;
 
-/**
- * The parent class for all power ups.
- * 
+/** 
  * The x and y relate to the top left position of the power up. The size is the
  * diameter of the circle.
  * 
  * @author Jordan Barraclough
  *
  */
-public abstract class PowerUp {
+public class PowerUp {
 	//FIELDS
 	protected int x, y, size;
 	protected Color color;
-	protected String name;
+	
+	//CONSTRUCTOR
+	public PowerUp(int x, int y, int size){
+		
+	}
 	
 	//FUNCTIONS
 	/**
