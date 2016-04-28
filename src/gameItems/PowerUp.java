@@ -2,7 +2,7 @@ package gameItems;
 
 import java.awt.*;
 
-/** 
+/**
  * The x and y relate to the top left position of the power up. The size is the
  * diameter of the circle.
  * 
@@ -10,16 +10,31 @@ import java.awt.*;
  *
  */
 public class PowerUp {
-	//FIELDS
+	// FIELDS
 	protected int x, y, size;
 	protected Color color;
-	
-	//CONSTRUCTOR
-	public PowerUp(int x, int y, int size){
-		
+
+	// CONSTRUCTOR
+	/**
+	 * Creates a power up at the location (x,y) of the set size and colour.
+	 * 
+	 * @param x
+	 *            x-position
+	 * @param y
+	 *            y-position
+	 * @param size
+	 *            Diameter of the circle
+	 * @param color
+	 *            Colour of the powerup
+	 */
+	public PowerUp(int x, int y, int size, Color color) {
+		this.x = x;
+		this.y = y;
+		this.size = size;
+		this.color = color;
 	}
-	
-	//FUNCTIONS
+
+	// FUNCTIONS
 	/**
 	 * Draw the power up
 	 * 
