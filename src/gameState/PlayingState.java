@@ -16,9 +16,9 @@ import main.Game;
  *
  */
 public class PlayingState extends GameState {
-	//FIELDS
+	// FIELDS
 	private PowerUp pUp;
-	
+
 	// CONSTRUCTOR
 	public PlayingState(GameStateManager gsm) {
 		this.gsm = gsm;
@@ -26,11 +26,17 @@ public class PlayingState extends GameState {
 
 	// FUNCTIONS
 	public void initialise() {
-		int x = 100;
-		int y = 100;
-		
-		
-		pUp = new PowerUp(x,y,10,Color.RED);
+		int x = 0;
+		int y = 0;
+		int size = 10;
+		while (x < size || x > Game.WIDTH - size - 5) {
+			x = randomNumber(Game.WIDTH);
+		}
+		while (y < size || y > Game.HEIGHT - size - 5) {
+			y = randomNumber(Game.HEIGHT);
+		}
+
+		pUp = new PowerUp(x, y, size, Color.RED);
 	}
 
 	public void update() {
@@ -71,6 +77,11 @@ public class PlayingState extends GameState {
 	}
 
 	public void keyReleased(int key) {
+	}
+
+	private int randomNumber(int upperLimit) {
+		int rand = (int) (Math.random() * upperLimit + 1);
+		return rand;
 	}
 
 }

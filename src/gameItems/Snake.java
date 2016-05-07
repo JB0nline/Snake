@@ -3,6 +3,8 @@ package gameItems;
 import java.awt.*;
 import java.util.ArrayList;
 
+import main.Game;
+
 /**
  * The main snake class. Deals with all information and actions regarding the
  * snake.
@@ -32,7 +34,7 @@ public class Snake {
 		color = Color.BLUE;
 
 		// Speed of the snake
-		speed = 500;
+		speed = 50;
 
 		// Booleans to hold the direction of the snake.
 		left = false;
@@ -56,13 +58,29 @@ public class Snake {
 			segments.remove(0);
 			BodySegment BSeg = segments.get(segments.size() - 1);
 			if (right) {
-				segments.add(new BodySegment(BSeg.getX() + segmentSize, BSeg.getY(), segmentSize));
+				if (BSeg.getX() + segmentSize > Game.WIDTH) {
+					segments.add(new BodySegment(segmentSize, BSeg.getY(), segmentSize));
+				} else {
+					segments.add(new BodySegment(BSeg.getX() + segmentSize, BSeg.getY(), segmentSize));
+				}
 			} else if (left) {
-				segments.add(new BodySegment(BSeg.getX() - segmentSize, BSeg.getY(), segmentSize));
+				if (BSeg.getX() - segmentSize < segmentSize) {
+					segments.add(new BodySegment(Game.WIDTH - segmentSize, BSeg.getY(), segmentSize));
+				} else {
+					segments.add(new BodySegment(BSeg.getX() - segmentSize, BSeg.getY(), segmentSize));
+				}
 			} else if (down) {
-				segments.add(new BodySegment(BSeg.getX(), BSeg.getY() + segmentSize, segmentSize));
+				if (BSeg.getY() + segmentSize > Game.HEIGHT) {
+					segments.add(new BodySegment(BSeg.getX(), segmentSize, segmentSize));
+				} else {
+					segments.add(new BodySegment(BSeg.getX(), BSeg.getY() + segmentSize, segmentSize));
+				}
 			} else {
-				segments.add(new BodySegment(BSeg.getX(), BSeg.getY() - segmentSize, segmentSize));
+				if (BSeg.getY() - segmentSize < segmentSize) {
+					segments.add(new BodySegment(BSeg.getX(), Game.HEIGHT - segmentSize, segmentSize));
+				} else {
+					segments.add(new BodySegment(BSeg.getX(), BSeg.getY() - segmentSize, segmentSize));
+				}
 			}
 
 		}
