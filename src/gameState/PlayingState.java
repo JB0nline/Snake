@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.event.KeyEvent;
 
+import gameItems.PowerUp;
 import gameState.GameStateManager;
 import main.Game;
 
@@ -15,6 +16,9 @@ import main.Game;
  *
  */
 public class PlayingState extends GameState {
+	//FIELDS
+	private PowerUp pUp;
+	
 	// CONSTRUCTOR
 	public PlayingState(GameStateManager gsm) {
 		this.gsm = gsm;
@@ -22,6 +26,11 @@ public class PlayingState extends GameState {
 
 	// FUNCTIONS
 	public void initialise() {
+		int x = 100;
+		int y = 100;
+		
+		
+		pUp = new PowerUp(x,y,10,Color.RED);
 	}
 
 	public void update() {
@@ -40,6 +49,7 @@ public class PlayingState extends GameState {
 		g.drawString(s, Game.WIDTH / 2 - length / 2, 50);
 
 		gsm.snake.draw(g);
+		pUp.draw(g);
 	}
 
 	public void keyPressed(int key) {
