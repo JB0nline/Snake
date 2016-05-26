@@ -41,6 +41,7 @@ public class PlayingState extends GameState {
 
 	public void update() {
 		gsm.snake.update();
+		
 	}
 
 	public void draw(Graphics2D g) {
@@ -54,8 +55,8 @@ public class PlayingState extends GameState {
 		int length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
 		g.drawString(s, Game.WIDTH / 2 - length / 2, 50);
 
-		gsm.snake.draw(g);
 		pUp.draw(g);
+		gsm.snake.draw(g);
 	}
 
 	public void keyPressed(int key) {

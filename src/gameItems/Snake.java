@@ -7,7 +7,8 @@ import main.Game;
 
 /**
  * The main snake class. Deals with all information and actions regarding the
- * snake.
+ * snake. The last body segment in the @segments ArrayList is the "head" or
+ * front of the snake.
  * 
  * @author Jordan Barraclough
  *
@@ -15,7 +16,7 @@ import main.Game;
 public class Snake {
 	// FIELDS
 	private ArrayList<BodySegment> segments;
-	private boolean left, right, up, down, changed;
+	private boolean left, right, up, down, changed, addSegment;
 	private int segmentSize;
 	private Color color;
 	private long moveTimer, speed;
@@ -55,7 +56,10 @@ public class Snake {
 			// Changed is set to false so that the snake cannot change direction
 			// more than once per tick
 			changed = false;
-			segments.remove(0);
+			if (!addSegment) {
+				segments.remove(0);
+			}
+			addSegment = false;
 			BodySegment BSeg = segments.get(segments.size() - 1);
 			if (right) {
 				if (BSeg.getX() + segmentSize > Game.WIDTH) {
@@ -156,5 +160,21 @@ public class Snake {
 		up = false;
 		down = false;
 		right = false;
+	}
+
+	public void addSegment() {
+		addSegment = true;
+	}
+
+	/**
+	 * This method will check if the snake has collided with the sent powerup.
+	 * 
+	 * @param pUp
+	 *            The powerup to check for a collision with.
+	 * @return Returns true if the snake has collided with the powerup.
+	 */
+	public boolean checkCollision(PowerUp pUp) {
+		
+		return true;
 	}
 }

@@ -45,4 +45,25 @@ public class PowerUp {
 		g.setColor(color);
 		g.fillOval(x, y, size, size);
 	}
+
+	/**
+	 * Returns the X-position of the power up.
+	 */
+	public int getX() {
+		return x;
+	}
+
+	/**
+	 * Returns the Y-position of the power up.
+	 */
+	public int getY() {
+		return y;
+	}
+
+	/**
+	 * Returns the diameter of the power up.
+	 */
+	public int getSize() {
+		return size;
+	}
 }
