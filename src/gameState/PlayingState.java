@@ -41,7 +41,7 @@ public class PlayingState extends GameState {
 
 	public void update() {
 		gsm.snake.update();
-		
+		gsm.snake.checkCollision(pUp);
 	}
 
 	public void draw(Graphics2D g) {
@@ -54,8 +54,14 @@ public class PlayingState extends GameState {
 		String s = "Playing State";
 		int length = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
 		g.drawString(s, Game.WIDTH / 2 - length / 2, 50);
-
-		pUp.draw(g);
+		
+		
+		try {
+			pUp.draw(g);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 		gsm.snake.draw(g);
 	}
 

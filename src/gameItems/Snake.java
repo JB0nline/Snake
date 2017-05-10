@@ -86,7 +86,7 @@ public class Snake {
 					segments.add(new BodySegment(BSeg.getX(), BSeg.getY() - segmentSize, segmentSize));
 				}
 			}
-
+			
 		}
 	}
 
@@ -174,7 +174,11 @@ public class Snake {
 	 * @return Returns true if the snake has collided with the powerup.
 	 */
 	public boolean checkCollision(PowerUp pUp) {
+		System.out.println(Math.abs(pUp.getX()-segments.get(segments.size()-1).getX()));
+		System.out.println(Math.abs(pUp.getY()-segments.get(segments.size()-1).getY()));
 		
-		return true;
+		//Math.sqrt( )
+		
+		return false;
 	}
 }
