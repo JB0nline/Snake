@@ -1,2 +1,2 @@
 # Snake
-A simple game of the classic game Snake. Designed more as a proof on concept.
+A simple game of Snake. Designed more as a proof of concept and for a bit of down time programming. Uses the state manager architecture.
